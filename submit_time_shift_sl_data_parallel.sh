@@ -1,13 +1,30 @@
-01_remove_vols_from_start_and_end.sh#!/bin/bash
+#!/bin/bash
 
-story_dir=$1
 
-results_path='/oak/stanford/groups/menon/projects/daelsaid/2022_speaker_listener/results/post_processed_wholebrain/'
+group=$1
+condition=$2
+parent_dir=$3
 
-output_dir=${results_path}/${story_dir}/processed_data/ts_output
-listener_fmri_data_dir=${results_path}/${story_dir}/processed_data/listener_data
-speaker_fmri_data_dir=${results_path}/${story_dir}/processed_data/speaker_data
+usage() {
+    echo "Usage: bash sbatch_time_shift.sh <data_folder> <memory> <queue>"
+    echo "  <group>  - ASD or TD (parent dir)"
+	echo "  <condition>  - story dir (story1/2/3/4"
+    echo "  <parent_dir>  - parent folder containing group/condition data"
+    echo "Example: bash sbatch_time_shift.sh asd story1 /scratch/users/daelsaid/updated_results"
+    exit 1
+}
 
+# chck # arguments are provided
+if [ "$#" -ne 3 ]; then
+    usage
+fi
+
+
+results_path=${parent_dir}/${group}/${condition}
+
+output_dir=${results_path}/time-shift
+listener_fmri_data_dir=${results_path}
+speaker_fmri_data_dir=${results_path}/speaker_data
 
 ml math matlab;
 
