@@ -34,11 +34,11 @@ make_gifs.ipynb                                     result visualization
 ```
 
 ### Dependencies
-**Python:**nilearn, nibabel, numpy, pandas, statsmodels, matplotlib, tqdm
-**MATLAB:** SPM12, updated ISC toolbox
-**HPC:** SLURM (Stanfords HPC computing cluster)'
+* **Python:** nilearn, nibabel, numpy, pandas, statsmodels, matplotlib, tqdm  
+* **MATLAB:** SPM12, updated ISC toolbox  
+* **HPC:** SLURM (Stanfords HPC computing cluster)'
 
 
 
 ### to note
-Data paths are hardcoded to local/cluster paths and will need updating. Subject lists are generated from QC output and diagnosis mappings pre-generated via `create_subject_lists_based_on_usability_SL.py`.
+* Data paths are hardcoded to local/cluster paths and will need updating. Subject lists are generated from QC output and diagnosis mappings pre-generated via `create_subject_lists_based_on_usability_SL.py`.
